@@ -42,7 +42,7 @@ a { /*quitamos el subrayado de enlaces*/
 }
 
 img {
-    width: 100%;
+    max-width: 100%;
 }
 
 .contenedor {
@@ -65,4 +65,37 @@ h2 {
 }
 h3 {
     font-size: 2.4rem;
+}
+
+
+/**header**/
+
+.header {
+    display: flex;
+    justify-content: center; /*alineamos al centro*/
+}
+
+.header__logo {
+    margin: 3rem 0; /*dejamos espacio arriba del logo y debajo, pero nada a los lados*/
+}
+
+/**Navegacion**/
+
+.navegacion {
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0; /*hacemos mas gruesa la barra de navegacion*/
+    display: flex;
+    justify-content: center; /*alineamos enlaces al centro*/
+    gap: 2rem; /*separa el texto de los enlaces entre si*/
+}
+
+.navegacion__enlace { /*aspecto de enlaces de barra de navegacion*/
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 3rem; /*tamano de letra*/
+}
+
+.navegacion__enlace--activo, /*mantenemos en enlace de color amarillo dependiendo de la pagina en que se encuentre o el cursor*/
+.navegacion__enlace:hover {
+    color: var(--secundario);
 }
