@@ -25,13 +25,13 @@ body {
     /*definimos el color principal y sus tamanos*/
     background-color: var(--primario);
     font-size: 1.6rem;
-    line-height: 1.5;
+    line-height: 1.5; /*interlineado*/
 
 }
 
 p { /*definimos estructura del cuerpo*/
 
-     font-size: 1.8rem;
+     font-size: 1.8rem; /*16 px*/
      font-family: Arial, Helvetica, sans-serif;
      color: var(--blanco);
 
@@ -46,7 +46,7 @@ img {
 }
 
 .contenedor {
-    margin: 120rem; /*1200 pixeles*/
+    margin: 1rem; /*1200 pixeles*/
     max-width: 0 auto; /*centrar contenido*/
 }
 
@@ -59,14 +59,12 @@ h1, h2, h3 { /*Alineamos titulos y agregamos color*/
 h1 {
     font-size: 4rem;
 }
-
 h2 {
     font-size: 3.2rem;
 }
 h3 {
     font-size: 2.4rem;
 }
-
 
 /**header**/
 
@@ -79,20 +77,35 @@ h3 {
     margin: 3rem 0; /*dejamos espacio arriba del logo y debajo, pero nada a los lados*/
 }
 
+/**footer**/
+.footer {
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0; /*ajustar margen de los lados*/
+    margin-top: 2rem; /*separacion de elementos por arriba*/
+}
+
+.footer__texto {
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+    font-size: 2rem; /*tamano*/
+}
+
 /**Navegacion**/
 
 .navegacion {
-    background-color: var(--primarioOscuro);
+    background-color: var(--primarioOscuro); /*fondo de barra de navegacion*/
     padding: 1rem 0; /*hacemos mas gruesa la barra de navegacion*/
     display: flex;
     justify-content: center; /*alineamos enlaces al centro*/
-    gap: 2rem; /*separa el texto de los enlaces entre si*/
+    /*gap: 2rem; /*separa el texto de los enlaces entre si*/
 }
 
 .navegacion__enlace { /*aspecto de enlaces de barra de navegacion*/
     font-family: var(--fuentePrincipal);
     color: var(--blanco);
     font-size: 3rem; /*tamano de letra*/
+    margin-right: 2rem;
+    
 }
 
 .navegacion__enlace--activo, /*mantenemos en enlace de color amarillo dependiendo de la pagina en que se encuentre o el cursor*/
