@@ -46,8 +46,14 @@ img {
 }
 
 .contenedor {
-    margin: 12rem; /*1200 pixeles*/
+    margin: 1rem; /*1200 pixeles*/
     max-width: 0 auto; /*centrar contenido*/
+}
+@media (min-width: 768px) {
+    .contenedor {
+        margin: 10rem; /*1200 pixeles*/
+        max-width: 0 auto; /*centrar contenido*/
+    }
 }
 
 h1, h2, h3 { /*Alineamos titulos y agregamos color*/
@@ -126,6 +132,19 @@ h3 {
     }
 }
 
+.grid__nosotros{
+    display: grid; /*seleccionamos el tipo de orden o maqueta que llevaran los elementos*/
+    grid-template-columns: repeat(1, 1fr); /*se generan 2 columnas*/
+    column-gap: 2rem; /*Separa los margenes de las imagenes*/
+    row-gap: 2rem; /*sepaara el margen por abajo y arriba de las imagenes*/
+
+}
+@media (min-width: 768px) {
+    .grid__nosotros{
+        grid-template-columns: repeat(2, 1fr); /*se generan dos columnas*/
+    }
+}
+
 /**productos*/
 
 .producto{
@@ -152,4 +171,50 @@ h3 {
     margin: 1rem 0;
     text-align: center;
     line-height: 1.2;
+}
+
+/**graficos*/
+
+.grafico{
+    min-height: 30rem;
+    background-repeat: no-repeat; /*evitampos que las imagenes se repitan en el mismo espacio*/
+    background-size: cover;/*llenamos todo el espacio de las imagenes*/
+    grid-column:  1 / 3;
+}
+
+.grafico--camisas {
+    grid-row: 2 / 3; /*dejamos espacio en la cuadricola de la posicion 2 a 3 de arriba a abajo*/
+    background-image: url(../img/grafico1.jpg);
+}
+
+.grafico--node {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+}
+
+@media (min-width: 768px) { /**ajustar espacio de imagen de doble casilla*/
+    .grafico--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+.nosotros {
+    background-size: cover;
+}
+
+.nosotros__des--texto{
+    text-align: justify;
+    text-size-adjust: auto;
+    
+}
+
+.nosotros__imagen {
+    grid-row: 1 / 2;
+}
+
+@media (min-width: 768px) {
+    .nosotros__imagen {
+        grid-column: 2 / 3;
+    }
 }
