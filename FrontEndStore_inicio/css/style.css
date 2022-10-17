@@ -199,22 +199,53 @@ h3 {
     }
 }
 
+/**nosotros**/
+
 .nosotros {
-    background-size: cover;
-}
-
-.nosotros__des--texto{
-    text-align: justify;
-    text-size-adjust: auto;
-    
-}
-
-.nosotros__imagen {
-    grid-row: 1 / 2;
+    display: grid; /*creamos la cuadricula*/
+    grid-template-rows: repeat(2, auto);
 }
 
 @media (min-width: 768px) {
-    .nosotros__imagen {
-        grid-column: 2 / 3;
+    .nosotros {
+        grid-template-columns: repeat(2, 1fr); /*nos genera dos columnas*/
+        column-gap: 2rem;
     }
+}
+
+.nosotros__imagen {
+    grid-row: 1 / 2; /*cuando la pantalla se reduce la imagen queda arriba del texto*/
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .nosotros__imagen{
+        grid-column: 2 / 3; /*movemos la imagen a la derecha*/
+    }
+}
+
+/**bloques**/
+
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /*2 columnas de mitad y mita*/
+    gap: 2rem;/*separaciobn*/
+}
+
+@media (min-width: 768px) {
+    .bloques {
+        grid-template-columns: repeat(4, 1fr); /*creamos 4 columnas */
+    }
+}
+
+.bloque {
+    text-align: center;
+}
+
+.bloque__imagen {
+    width: 100%;
+}
+
+.bloque__titulo {
+    margin: 0;
 }
