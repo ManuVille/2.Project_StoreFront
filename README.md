@@ -1,4 +1,4 @@
 # 2. Project_StoreFront
-simple Store's Front end design 
+Simple Store's Front end design with HTML and CSS
 
-link to project: https://simplestorefront.netlify.app
+Link to project deployed: https://simplestorefront.netlify.app
