@@ -2,7 +2,7 @@
     --primario: #9C27B0;
     --primarioOscuro: #89119d;
     --secundario: #FFCE00; 
-    --secundarioOscuro: rgb(233, 287, 2);
+    --secundarioOscuro: rgb(233, 187, 2);
     --blanco: #fff;
     --negro: #000; 
 
@@ -42,7 +42,7 @@ a { /*quitamos el subrayado de enlaces*/
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
 }
 
 .contenedor {
@@ -152,10 +152,6 @@ h3 {
     padding: 1rem; /*centrar imagen en margen*/
 }
 
-.producto__imagen{
-    width: 100%;
-}
-
 .producto__nombre{
     font-size: 4rem;
 }
@@ -215,7 +211,6 @@ h3 {
 
 .nosotros__imagen {
     grid-row: 1 / 2; /*cuando la pantalla se reduce la imagen queda arriba del texto*/
-    width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -242,10 +237,52 @@ h3 {
     text-align: center;
 }
 
-.bloque__imagen {
-    width: 100%;
-}
-
 .bloque__titulo {
     margin: 0;
+}
+
+/**pagina del producto**/
+
+@media (min-width: 768px) {
+    .camisa {
+        display:  grid;
+        grid-template-columns: repeat(2, 1fr); /*Colocamos la imagen y formulario de la camisa de lado a otro*/
+        column-gap: 2rem; /*hacemos una separacion entre imagen y texto de 20 pixeles*/
+    }
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /*creamos la cuadrilla de 4 posiciones, con dos columnas */
+    gap: 2rem; /*hacemos espacio entre los lugares de la cuadrilla*/
+    
+}
+
+.formulario__campo {
+    border-color: var(--primarioOscuro); /*cambiamos de color el fondo del borde*/
+    border-width: 1rem; /*hacemos mas grueso el borde*/
+    border-style: solid; /*Todo el borde se vera igual*/
+    
+    border: 1rem solid var(--primarioOscuro); /*es exactamente las tres lineas de arriba (grueso del borde / estilo del borde / color) solo que en una linea*/
+    background-color: transparent; /*el text box se quede del mismo color del fondo*/
+    color: var(--blanco);
+    font-size: 2rem; /*aunentamos el tamano de la letra*/
+    font-family: Arial, Helvetica, sans-serif;
+    padding: .5rem; /*aumentamos tamano de bordes*/
+    appearance: none; /*quitamos las flechas de talla*/
+}
+
+.formulario__submit {
+    background-color: var(--secundario); /*cambiamos color */
+    border: none; /* quitamos el borde del boton */
+    font-size: 2rem; /*hacemos mas grande el boton */
+    font-family: var(--fuentePrincipal); /*cambiamos el tipo de letra*/
+    padding: 1.2rem; /*dejamos espacio de 20 pixeles alrededor del texto del boton. Asi agranda bordes*/ 
+    transition: background-color .3s ease; /*el cambio de color cuando se coloca el cursos se hace mas lento*/
+    grid-column: 1 / 3;
+}
+
+.formulario__submit:hover {
+   cursor: pointer; /*al colocar diseno al boton se pierde la manita de seleccion, con pointer vuelve a salir*/
+   background-color: var(--secundarioOscuro); /*cambia de color el boton cuando el cursor se pone encima de el*/
 }
